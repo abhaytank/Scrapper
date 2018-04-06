@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load staticfiles %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Search</title>
+    <link href="{% static 'searcher/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'searcher/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'searcher/css/animate.min.css' %}" rel="stylesheet"> 
+    <link href="{% static 'searcher/css/lightbox.css' %}" rel="stylesheet"> 
+	<link href="{% static 'searcher/css/main.css' %}" rel="stylesheet">
+	<link href="{% static 'searcher/css/responsive.css' %}" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+	    <script src="js/html5shiv.js"></script>
+	    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="{% static 'searcher/images/ico/favicon.ico' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'searcher/images/ico/apple-touch-icon-144-precomposed.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'searcher/images/ico/apple-touch-icon-144-precomposed.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'searcher/images/ico/apple-touch-icon-72-precomposed.png' %}">
+    <link rel="apple-touch-icon-precomposed" href="{% static 'searcher/images/ico/apple-touch-icon-57-precomposed.png' %}">
+</head><!--/head-->
+
+<body>
+	<header id="header">      
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 overflow">
+                   <div class="social-icons pull-right">
+                        <ul class="nav nav-pills">
+                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href=""><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div> 
+                </div>
+             </div>
+        </div>
+    </header>
+		<!--<div class="navbar-header">
+                        <a class="navbar-brand" href="index.html">
+                    	<h1><img src="images/logo.png" alt="logo"></h1>
+                    </a>
+         </div>-->
+    <!--/#header-->
+	
+    <section id="home-slider">
+        <div class="container">
+            <div class="main-slider">
+                    <div class="slide-text">
+                        <a href="/"><b><h1>404 Search Engine</h1></b></a>
+                        <h3><p>Anything can be found</p></h3>
+							<br></br>
+								{% block content %}
+
+									<form method='POST' action='/index/'> {% csrf_token %}
+									{{ form.as_p }} <br> </br> 
+									<input type='submit'  class="btn btn-common" value='Search' name="textfield" >
+									</form>
+								{% endblock %}  
+								<br>
+								<br>
+								<br>                      
+                    </div>
+                <a href="/"><img src="{% static 'searcher/images/home/slider/slide1/house.png' %}" class="img-responsive slider-house" alt="slider image"></a>
+                <a href="/"><img src="{% static 'searcher/images/home/slider/slide1/circle1.png' %}" class="slider-circle1" alt="slider image"></a>
+                <a href="/"><img src="{% static 'searcher/images/home/slider/slide1/circle2.png' %}" class="slider-circle2" alt="slider image"></a>
+                <a href="/"><img src="{% static 'searcher/images/home/slider/slide1/cloud1.png' %}" class="slider-cloud1" alt="slider image"></a>
+                <a href="/"><img src="{% static 'searcher/images/home/slider/slide1/cloud2.png' %}" class="slider-cloud2" alt="slider image"></a>
+                <a href="/"><img src="{% static 'searcher/images/home/slider/slide1/cloud3.png' %}" class="slider-cloud3" alt="slider image"></a>
+                <a href="/"><img src="{% static 'searcher/images/home/slider/slide1/sun.png' %}" class="slider-sun" alt="slider image"></a>
+				<img src="{% static 'searcher/images/home/cycle.png' %}" class="slider-cycle" alt="">
+            </div>
+        </div>
+        <div class="preloader"><i class="fa fa-sun-o fa-spin"></i></div>
+    </section>
+
+    <!--/#footer-->
+
+    <script type="text/javascript" src="{% static 'searcher/js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'searcher/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'searcher/js/lightbox.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'searcher/js/wow.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'searcher/js/main.js' %}"></script>   
+</body>
+</html>

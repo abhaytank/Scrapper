@@ -1,0 +1,12 @@
+{% extends "searcher/header.html" %}
+{% block content %}
+<p> searched loaded</p>
+	{% for c in result %}
+		<br><br><a href="{{c}}">{{c}}</a></br></br>
+	{% endfor %}
+	<br></br>
+<a href="/" class="btn btn-common">RETURN TO THE HOMEPAGE</a>
+<br>
+<br>
+<br>
+{% endblock %}
