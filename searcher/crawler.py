@@ -17,7 +17,6 @@ class SearchWeb():
                 "jsp":"https://www.tutorialspoint.com/jsp/index.htm",
                 "html":"https://www.tutorialspoint.com/html/index.htm",
                 "bootstrap":"https://www.tutorialspoint.com/bootstrap/index.htm",
-                "cpanel":"https://www.tutorialspoint.com/cpanel/index.htm",
                 "css":"https://www.tutorialspoint.com/css/index.htm"}
 
 
